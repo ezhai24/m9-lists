@@ -24,15 +24,18 @@ meals[[5]] <- lunch
 
 # Use single-bracket notation to extract your breakfast and lunch from your list
 # and save them to a list called `early.meals`
-early.meals <- c(meals['my.breakfast'], meals['my.lunch'])
+early.meals <- list(meals['my.breakfast'], meals['my.lunch'])
 
 
 ### Bonus ###
 # Create a list that has the number of items you ate for each meal
 # Hint: use the `lappy()` function
-
+meal.amounts <- lapply(meals, length)
 
 # Write a function that adds pizza to every meal
-
+AddPizza <- function(meal) {
+  return(c(meal, "pizza"))
+}
 
 # Add pizza to every meal!
+lapply(meals, AddPizza)
